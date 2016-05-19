@@ -27,13 +27,19 @@ var makeRequest = function() {
   xmlHttp.send(null);
 }
 
+var updateList = function() {
+  var http = new XMLHttpRequest();
+  http.open("POST", '/stockList', true);
+  http.send(null);  
+}
+
 var sort = function(list) {
   return sortedList = list.sort(function(a,b) {
     var x = a.urgency;
     var y = b.urgency;
     return ((x > y) ? -1 : ((x < y) ? 1 : 0));
   });
-};
+}
 
 // Function to run on load
 window.onload = function() {

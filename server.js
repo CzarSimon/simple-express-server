@@ -2,44 +2,26 @@
 const credentials = require('./credentials');
 const express = require('express');
 const path = require('path');
+const makeStockList = require('./server/helperMethods').makeStockList;
 let app = express();
 
 const localPort = 3000;
 let port = process.env.EXPRESS_PORT || localPort;
 let ipAddress = (port === localPort) ? credentials.server.local : credentials.server.prodIP
 
-let stockList;
+let stockList = makeStockList();
 
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/stockList', (req, res) => {
-  res.send(makeStockList());
+  res.send(stockList);
 });
 
 app.post('/stockList', (req, res) => {
-  console.log('This method should update the stockList');
+  stockList = makeStockList();
+  console.log('Mehtod updated the stock list');
 });
 
 app.listen(port, ipAddress, () => {
   console.log('Server listening on: ' + ipAddress + ":" + port);
 });
-
-const makeStockList = () => {
-  let stockList = [
-    {name: 'Twitter Inc.', urgency: randomUrgency() },
-    {name: 'Amazon.com', urgency: randomUrgency() },
-    {name: 'Apple', urgency: randomUrgency() },
-    {name: 'LinkedIn', urgency: randomUrgency() },
-    {name: 'Facebook', urgency: randomUrgency() },
-    {name: 'Alphabet Inc.', urgency: randomUrgency() },
-    {name: 'Intel Corp.', urgency: randomUrgency() },
-    {name: 'Nike Inc.', urgency: randomUrgency() },
-    {name: 'Tesla Corp.', urgency: randomUrgency() },
-    {name: 'Accenture', urgency: randomUrgency() }
-  ];
-  return stockList
-}
-
-const randomUrgency = () => {
-  return (Math.random() * 1.5).toFixed(2);
-}
