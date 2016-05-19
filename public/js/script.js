@@ -3,7 +3,7 @@ var printFn = function() {
 }
 
 var listItem = function(name, value) {
-  return "<li>" + name + " | " + value + "</li>";
+  return "<li><p>" + name + " | " + value + "</p></li>";
 }
 
 var makeList = function(list) {

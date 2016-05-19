@@ -3,14 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>mimir</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
-    <div ng-controller="urgencyController">
-      <h2>Stocks</h2>
+    <div class="col-md-3 col-md-offset-1">
+      <h1 class="headline">Stocks</h1>
       <ul id="stockList">
       </ul>
-      <button type="button" name="button" onclick="makeRequest()">Update</button>
+      <button type="button" class="btn btn-primary btn-lg" onclick="makeRequest()">Update</button>
     </div>
     <script src="js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   </body>
 </html>
