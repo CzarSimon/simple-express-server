@@ -1,7 +1,7 @@
 'use strict'
 
 const randomUrgency = () => {
-  return (Math.random() * 1.5).toFixed(2);
+  return (Math.random() * 1.2).toFixed(2);
 }
 
 const makeStockList = () => {

@@ -3,7 +3,8 @@ var printFn = function() {
 }
 
 var listItem = function(name, value) {
-  return "<li><p>" + name + " | " + value + "</p></li>";
+  var urg = (value < 1.0) ? 'non-urgent' : 'urgent';
+  return "<li><p class='name'>" + name + "</p><p class='urgency " + urg + "'>" + value + "</p></li>";
 }
 
 var makeList = function(list) {
@@ -30,7 +31,7 @@ var makeRequest = function() {
 var updateList = function() {
   var http = new XMLHttpRequest();
   http.open("POST", '/stockList', true);
-  http.send(null);  
+  http.send(null);
 }
 
 var sort = function(list) {
@@ -41,7 +42,6 @@ var sort = function(list) {
   });
 }
 
-// Function to run on load
 window.onload = function() {
   makeRequest();
 }
