@@ -21,7 +21,9 @@ var makeRequest = function() {
   var xmlHttp = new XMLHttpRequest();
   xmlHttp.onreadystatechange = function() {
     if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-      makeList(JSON.parse(xmlHttp.responseText));
+      var response = JSON.parse(xmlHttp.responseText);
+      makeList(response.list);
+      postDate(response.date);
     }
   }
   xmlHttp.open("GET", '/stockList', true);
@@ -32,6 +34,11 @@ var updateList = function() {
   var http = new XMLHttpRequest();
   http.open("POST", '/stockList', true);
   http.send(null);
+}
+
+var postDate = function(newDate) {
+  var datePlace = document.getElementById('datePlace');
+  datePlace.innerHTML = newDate;
 }
 
 var sort = function(list) {

@@ -20,7 +20,13 @@ const makeStockList = () => {
   return newList;
 }
 
+const getDate = () => {
+  let date = new Date();
+  return date.toLocaleString();
+}
+
 module.exports = {
   makeStockList: makeStockList,
+  getDate: getDate,
   randomUrgency: randomUrgency
 };
