@@ -1,21 +1,37 @@
+body {
+  font-family: Lato
+}
+
+
 .headline {
   border-width: 0;
-  border-bottom-width: 2px;
-  border-color: grey;
+  border-bottom-width: 1px;
+  border-color: #d0d0d0;
   border-style: solid;
   color: rgb(50, 50, 190);
   padding-bottom: 10px;
   margin-bottom: 20px;
-  font-size: 3.5em;
+  font-size: 4em;
+  padding-left: 5%;
 }
 
 p {
-  font-size: 2.5em;
+  font-size: 3em;
 }
 
 ul {
   list-style-type: none;
   padding-left: 0px;
+}
+
+footer {
+  border-width: 0;
+  border-style: solid;
+  border-color: #d0d0d0;
+  border-top-width: 1px;
+  text-align: center;
+  margin-bottom: 6%;
+  padding-top: 3%;
 }
 
 li {
@@ -25,6 +41,15 @@ li {
   margin-bottom: 3%;
   padding: 2% 5% 1% 5%;
   box-shadow: 0px 7px 20px -15px rgba(0,0,0,0.75);
+}
+
+.btn-text {
+  padding-top: 2%;
+  padding-bottom: 4%;
+}
+
+.btn-block {
+  margin-bottom: 6%;
 }
 
 .urgency {
