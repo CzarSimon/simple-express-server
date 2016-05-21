@@ -30,12 +30,6 @@ var makeRequest = function() {
   xmlHttp.send(null);
 }
 
-var updateList = function() {
-  var http = new XMLHttpRequest();
-  http.open("POST", '/stockList', true);
-  http.send(null);
-}
-
 var postDate = function(newDate) {
   var datePlace = document.getElementById('datePlace');
   datePlace.innerHTML = newDate;

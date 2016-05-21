@@ -8,7 +8,7 @@ body {
   border-bottom-width: 1px;
   border-color: #d0d0d0;
   border-style: solid;
-  color: rgb(50, 50, 190);
+  color: #006dcc;
   padding-bottom: 10px;
   margin-bottom: 20px;
   font-size: 4.5em;
@@ -66,9 +66,9 @@ li {
 }
 
 .urgent {
-  color: red;
+  color: #d9534f;
 }
 
 .non-urgent {
-  color: rgb(50, 50, 190);
+  color: #006dcc;
 }

@@ -20,6 +20,15 @@ const makeStockList = () => {
   return newList;
 }
 
+const parseStockList = (dict) => {
+  let list = [];
+  for (let key in dict) {
+    if (!dict.hasOwnProperty(key)) continue;
+    list.push(dict[key]);
+  }
+  return list;
+}
+
 const getDate = () => {
   let date = new Date();
   return date.toLocaleString();
@@ -28,5 +37,6 @@ const getDate = () => {
 module.exports = {
   makeStockList: makeStockList,
   getDate: getDate,
-  randomUrgency: randomUrgency
+  randomUrgency: randomUrgency,
+  parseStockList: parseStockList
 };
