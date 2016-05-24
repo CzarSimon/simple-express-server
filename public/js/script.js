@@ -9,7 +9,13 @@ var listItem = function(name, value) {
 
 var makeList = function(list) {
   var htmlList = "";
-  var sortedList = sort(list);
+  var roundedList = list.map(function(item) {
+    return {
+      name: item.name,
+      urgency: parseFloat(item.urgency).toFixed(2)
+    };
+  });
+  var sortedList = sort(roundedList);
   for (item of sortedList) {
     console.log(listItem(item.name, item.urgency));
     htmlList = htmlList + listItem(item.name, item.urgency)
