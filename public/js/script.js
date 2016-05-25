@@ -10,10 +10,9 @@ var listItem = function(name, value) {
 var makeList = function(list) {
   var htmlList = "";
   var roundedList = list.map(function(item) {
-    return {
-      name: item.name,
+    return Object.assign({}, item, {
       urgency: parseFloat(item.urgency).toFixed(2)
-    };
+    });
   });
   var sortedList = sort(roundedList);
   for (item of sortedList) {
